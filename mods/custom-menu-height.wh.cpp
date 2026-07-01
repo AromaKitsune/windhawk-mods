@@ -689,8 +689,8 @@ inline bool ApplyImmersiveMenuHook(LPCWSTR pszModuleName,
 // Required to eradicate immersive menus system-wide on Windows 10 and later.
 bool IsWindows10OrGreater()
 {
-    auto ulMajorVersion = *reinterpret_cast<volatile ULONG*>(0x7FFE026C);
-    return ulMajorVersion >= 10;
+    auto ulNtMajorVersion = *reinterpret_cast<volatile ULONG*>(0x7FFE026C);
+    return ulNtMajorVersion >= 10;
 }
 
 // Load settings
